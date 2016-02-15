@@ -1,0 +1,40 @@
+{
+  "name": "cce-form-builder",
+  "version": "0.0.1",
+  "description": "Form builder prototype",
+  "main": "src/main.js",
+  "author": "Studio None <info@studionone.com.au>",
+  "license": "",
+  "scripts": {
+    "test": "echo No tests",
+    "clean": "rm -rf assets/js/ assets/css/ && mkdir -p assets/js/ assets/css/",
+    "build": "npm run clean && npm run build:js && npm run build:sass",
+    "build:js": "./node_modules/.bin/browserify -d -t [ partialify ] -e src/main.js --debug | ./node_modules/.bin/exorcist assets/js/main.min.js.map > assets/js/main.min.js",
+    "build:sass": "./node_modules/.bin/node-sass styles.scss | ./node_modules/.bin/postcss --use autoprefixer -o assets/css/main.min.css",
+    "server": "./node_modules/.bin/browser-sync start --server --files=\"assets/js/main.min.js, assets/css/main.min.css\"",
+    "watch:sass": "./node_modules/.bin/watch 'npm run build:sass' stylesheets/ --ignoreDotFiles --ignoreUnreadable",
+    "watch:js": "./node_modules/.bin/watchify src/main.js -t [ partialify ] -o './node_modules/.bin/exorcist assets/js/main.min.js.map > assets/js/main.min.js' -d",
+    "watch": "npm run watch:sass & npm run watch:js",
+    "start": "npm run server & npm run watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "browser-sync": "^2.7.1",
+    "browserify": "^9.0.8",
+    "exorcist": "^0.4.0",
+    "node-sass": "^3.2.0",
+    "partialify": "^3.1.5",
+    "postcss-cli": "^1.5.0",
+    "watch": "^0.16.0",
+    "watchify": "^3.1.1"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
+    "knockout": "^3.3.0",
+    "knockout-dragdrop": "^2.4.2",
+    "knockout-postbox": "^0.5.2",
+    "knockout-sortable": "^0.11.0",
+    "underscore": "^1.8.3"
+  }
+}

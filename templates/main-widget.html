@@ -1,0 +1,47 @@
+<main id="main">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="field-list">
+					<div class="row fields-header">
+						<div class="col-md-6">
+							<h3>Field List</h3>
+						</div>
+						<div class="col-md-6 add-new-field-wrapper text-right">
+							<button class="btn btn-primary btn-black open-create" data-bind="click: openAddFieldModal">
+								Add New Field
+							</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<table class="table table-striped">
+								<tr class="table-title">
+									<td>TYPE</td>
+									<td>LABEL</td>
+									<td>SIZE</td>
+									<td></td>
+								</tr>
+								<!-- ko component: { name: "tr-field-info" } -->
+								<!-- /ko -->
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="field-preview">
+
+					<div class="row fields-header">
+						<div class="col-md-6">
+							<h3>Field Preview</h3>
+						</div>
+					</div>
+
+					<row-widget></row-widget>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

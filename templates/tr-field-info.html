@@ -1,0 +1,11 @@
+<!-- ko foreach: $parents[1].rows -->
+<tr class="table-field-item">
+	<td data-bind="text: type"></td>
+	<td data-bind="text: label"></td>
+	<td data-bind="text: size"></td>
+	<td class="edit-delete">
+		<span class="open-edit">Edit</span>
+		<span class="delete" data-bind="click: function() { $parents[2].remove_field($parents[2].rows()[$index()]); }">Delete</span>
+	</td>
+</tr>
+<!-- /ko -->

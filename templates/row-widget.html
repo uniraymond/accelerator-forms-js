@@ -1,0 +1,12 @@
+<div class="form-group"
+	 data-bind="sortable: { data: $parents[1].rows, options: { placeholder: 'sortable-placeholder', axis: 'y' } }">
+
+	<div class="form-group sortable" data-bind="css: size, css: type+'-field'">
+		<label data-bind="text: label, attr: { for: label.replace(' ', '_').toLowerCase() }"></label>
+
+		<!-- ko component: { name: type + '-preview' } -->
+		<!-- /ko -->
+
+	</div>
+
+</div>

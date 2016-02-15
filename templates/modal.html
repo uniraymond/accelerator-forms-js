@@ -1,0 +1,55 @@
+<div class="modal fade create" id="fieldModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Create New Field</h4>
+			</div>
+
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="field-label">Field label</label>
+					<input class="form-control" name="field-label" id="field-label" type="text" placeholder="Hint text"
+						   data-bind="value: $parent.label, event:{change: $parent.save_label($parent.label) }">
+				</div>
+				<div class="form-group">
+					<label for="field-type">Field type</label>
+					<select class="form-control" name="field-type" id="field-type"
+							data-bind="value: $parent.type, event:{change: $parent.save_type($parent.type) }">
+						<option value="">Select one field type</option>
+						<option value="paragraph">Paragraph text</option>
+						<option value="select">Select</option>
+						<option value="checkbox">Checkbox</option>
+						<option value="radio">Radio</option>
+						<option value="text">Text Input</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="field-size">Field size</label>
+					<select class="form-control" id="field-size" name="field-size"
+							data-bind="value: $parent.size, event:{change: $parent.save_size($parent.size) }">
+						<option value="">Select a size for this field</option>
+						<option value="large">Large</option>
+						<option value="medium">Medium</option>
+						<option value="small">Small</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default create"
+						data-bind="click: $parent.create_field($parent.label, $parent.type, $parent.size)">
+					Add field
+				</button>
+				<button type="button" class="btn btn-default edit"
+						data-bind="click: $parent.create_field($parent.label, $parent.type, $parent.size)">
+					Edit field
+				</button>
+			</div>
+
+		</div>
+	</div>
+</div>

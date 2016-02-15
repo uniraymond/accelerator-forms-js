@@ -1,0 +1,1 @@
+Accelerator build form insteads Prototype by Vuejs
